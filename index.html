@@ -6,11 +6,12 @@
 
 <style>
 body{
-font-family: Arial;
 margin:0;
+font-family:Arial;
 background:#f4f6f9;
 }
 
+/* HEADER */
 header{
 background:#0f172a;
 color:white;
@@ -18,6 +19,23 @@ padding:20px;
 text-align:center;
 }
 
+/* NAV */
+nav{
+display:flex;
+justify-content:space-around;
+background:#1e293b;
+padding:10px;
+}
+
+nav button{
+background:#334155;
+color:white;
+border:none;
+padding:10px;
+border-radius:6px;
+}
+
+/* SECTIONS */
 .container{
 padding:15px;
 }
@@ -33,15 +51,10 @@ box-shadow:0 2px 6px rgba(0,0,0,0.1);
 button{
 width:100%;
 padding:12px;
-background:#16a34a;
-color:white;
 border:none;
 border-radius:8px;
 font-size:16px;
-}
-
-a{
-text-decoration:none;
+background:#16a34a;
 color:white;
 }
 </style>
@@ -54,37 +67,83 @@ color:white;
 <p>Pass Your Exams with Confidence</p>
 </header>
 
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('free')">Free Notes</button>
+<button onclick="show('papers')">Past Papers</button>
+<button onclick="show('premium')">Premium</button>
+</nav>
+
 <div class="container">
 
+<!-- HOME -->
+<div id="home">
 <div class="card">
-<h3>📚 Free Notes</h3>
-<p>Access basic nursing and clinical notes</p>
-<button onclick="alert('Coming Soon')">Open</button>
+<h3>🎓 Welcome</h3>
+<p>Your trusted platform for Nursing & Clinical Medicine revision materials in Zambia.</p>
 </div>
 
 <div class="card">
-<h3>📄 Past Papers</h3>
-<p>Download exam past papers</p>
-<button onclick="alert('Coming Soon')">Open</button>
+<h3>🔥 Start Learning Now</h3>
+<p>Access free notes or upgrade to premium for full materials.</p>
+</div>
 </div>
 
+<!-- FREE NOTES -->
+<div id="free" style="display:none;">
+<div class="card">
+<h3>📚 Free Nursing Notes</h3>
+<p>Basic revision materials for all students.</p>
+<button onclick="alert('Upload PDF links later')">Open Notes</button>
+</div>
+
+<div class="card">
+<h3>📚 Clinical Medicine Basics</h3>
+<button onclick="alert('Upload PDF links later')">Open Notes</button>
+</div>
+</div>
+
+<!-- PAST PAPERS -->
+<div id="papers" style="display:none;">
+<div class="card">
+<h3>📄 Nursing Past Papers</h3>
+<button onclick="alert('Upload Google Drive link here')">Download</button>
+</div>
+
+<div class="card">
+<h3>📄 Clinical Medicine Papers</h3>
+<button onclick="alert('Upload Google Drive link here')">Download</button>
+</div>
+</div>
+
+<!-- PREMIUM -->
+<div id="premium" style="display:none;">
 <div class="card">
 <h3>💎 Premium Access</h3>
-<p>Get full revision materials + WhatsApp group</p>
-<button onclick="window.location.href='https://wa.me/260571024000'">
-Join via WhatsApp
-</button>
+<p>Get full notes, past papers, exam tips & WhatsApp group access.</p>
 </div>
 
 <div class="card">
-<h3>📞 Support</h3>
-<p>Chat with us on WhatsApp</p>
+<h3>💰 Payment</h3>
+<p>Pay via Airtel Money or WhatsApp us for access.</p>
 <button onclick="window.location.href='https://wa.me/260571024000'">
-Contact Us
+Join Premium via WhatsApp
 </button>
+</div>
 </div>
 
 </div>
+
+<script>
+function show(section){
+document.getElementById("home").style.display="none";
+document.getElementById("free").style.display="none";
+document.getElementById("papers").style.display="none";
+document.getElementById("premium").style.display="none";
+
+document.getElementById(section).style.display="block";
+}
+</script>
 
 </body>
 </html>
